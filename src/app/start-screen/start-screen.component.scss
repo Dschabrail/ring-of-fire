@@ -2,9 +2,6 @@
   height: 100vh;
   width: 100vw;
   max-width: 100%;
-  background-image: url("/assets/img/start-img.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,7 +19,7 @@
     background-color: white;
     color: black;
     font-size: 70px;
-    padding: 4px 32px;
+    padding: 32px 32px;
     border-radius: 6px;
     filter: drop-shadow(0 0 0.75rem white);
     cursor: pointer;
@@ -30,5 +27,13 @@
     &:hover {
       filter: drop-shadow(0 0 0.75rem red);
     }
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
   }
 }
