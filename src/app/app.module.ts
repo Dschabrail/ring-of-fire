@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StartScreenComponent } from './start-screen/start-screen.component';
@@ -15,6 +14,19 @@ import {MatInputModule} from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { GameInfoComponent } from './game-info/game-info.component';
 import {MatCardModule} from '@angular/material/card';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import {
+  CollectionReference,
+  DocumentData,
+  addDoc,
+  collection,
+  deleteDoc,
+  doc,
+  updateDoc,
+} from '@firebase/firestore';
+import { Firestore, collectionData, docData } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -35,6 +47,8 @@ import {MatCardModule} from '@angular/material/card';
     FormsModule,
     BrowserAnimationsModule,
     MatCardModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore()),
   ],
   providers: [],
   bootstrap: [AppComponent],
